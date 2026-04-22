@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanskrit Mantras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Sidebar: Mantra List -->
+        <aside id="sidebar" class="sidebar autohide-scrollbar">
+            <h1 id="home-btn" class="title">Mantras</h1>
+            <div id="mantra-list" class="mantra-list"></div>
+        </aside>
+
+        <!-- Main Content: Default View -->
+        <main id="default-view" class="main-content default-view">
+            <img src="assets/shiva-parvati.jpg" alt="Shiva Parvati" class="default-image">
+        </main>
+
+        <!-- Main Content: Mantra Detail -->
+        <main id="detail-view" class="main-content detail-view hidden">
+            <!-- Header -->
+            <header class="detail-header">
+                <h2 id="mantra-title" class="mantra-title"></h2>
+                <div class="header-controls">
+                    <button id="mobile-back-btn" class="mobile-back-btn">&larr;</button>
+                    <div class="font-controls">
+                        <button id="font-decrease" class="font-btn">A-</button>
+                        <span id="font-size-display" class="font-size-display">20</span>
+                        <button id="font-increase" class="font-btn">A+</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Split Content Area -->
+            <div class="detail-content-area">
+                <!-- Sticky Image -->
+                <div class="detail-image-col">
+                    <div class="sticky-image-container" id="image-zoom-btn">
+                        <img id="mantra-image" src="" alt="" class="mantra-image">
+                    </div>
+                </div>
+
+                <!-- Scrollable Body -->
+                <div id="mantra-scroll-container" class="detail-body-col">
+                    <div class="detail-body-inner">
+                        <div id="mantra-body" class="mantra-body" style="font-size: 20px;"></div>
+                        
+                        <!-- Navigation -->
+                        <div class="mantra-nav">
+                            <button id="prev-btn" class="nav-btn prev-btn hidden">
+                                <span class="nav-arrow">&larr;</span>
+                                <div class="nav-text">
+                                    <span class="nav-label">Previous</span>
+                                    <span id="prev-title" class="nav-mantra-title"></span>
+                                </div>
+                            </button>
+                            <div class="nav-spacer"></div>
+                            <button id="next-btn" class="nav-btn next-btn hidden">
+                                <div class="nav-text text-right">
+                                    <span class="nav-label">Next</span>
+                                    <span id="next-title" class="nav-mantra-title"></span>
+                                </div>
+                                <span class="nav-arrow">&rarr;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Image Modal Overlay -->
+        <div id="image-modal" class="image-modal hidden">
+            <button id="close-modal-btn" class="close-modal-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <img id="modal-image" src="" alt="Expanded Image" class="modal-image">
+        </div>
+    </div>
+    <script src="data/menu.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
